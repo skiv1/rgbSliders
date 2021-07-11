@@ -8,12 +8,39 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var labelRed: UILabel!
+    @IBOutlet weak var labelGreen: UILabel!
+    @IBOutlet weak var labelBlue: UILabel!
+    
+    @IBOutlet weak var sliderRed: UISlider!
+    @IBOutlet weak var sliderGreen: UISlider!
+    @IBOutlet weak var sliderBlue: UISlider!
+    
+    @IBOutlet weak var viewColour: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        //labels
+        labelRed.text = String(sliderRed.value)
+        labelBlue.text = String(sliderBlue.value)
+        labelGreen.text = String(sliderGreen.value)
     }
 
-
+    // sliders
+    @IBAction func sliderRedAction() {
+        labelRed.text = String(format: "%.2f", sliderRed.value)
+    
+    }
+    
+    @IBAction func sliderGreenAction() {
+        labelGreen.text = String(format: "%.2f", sliderGreen.value)
+        
+    }
+    @IBAction func sliderBlueAction() {
+        labelBlue.text = String(format: "%.2f", sliderBlue.value)
+    }
+   
+    
+    
 }
 
